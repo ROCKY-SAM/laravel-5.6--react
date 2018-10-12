@@ -1,5 +1,6 @@
-import React from 'react'
-import ReactDom from 'react-dom'
+import React from 'react';
+import ReactDom from 'react-dom';
+import UserListComponent from './UserListComponent';
 
 export default class User extends React.Component{
 
@@ -39,18 +40,7 @@ componentWillMount(){
                         </thead>
                         <tbody>
                             {this.state.data.map((user,i) => (
-                            <tr>
-                                <td>{user.id}</td>
-                                <td>{user.name}</td>
-                                <td>{user.email}</td>
-                                <td>
-<a href="" className="btn btn-primary">Edit</a> ||  
-<a href="" className="btn btn-danger">Delete</a>
-
-                                </td>
-                                
-                                </tr>
-                           
+                           <UserListComponent key={i} id={user.id} name={user.name} email={user.email}/>
                             )
                             )}
                              
